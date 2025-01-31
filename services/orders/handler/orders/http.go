@@ -35,7 +35,7 @@ func (h *OrdersHttpHandler) CreateOrder(w http.ResponseWriter, r *http.Request) 
 	order := &orders.Order{
 		OrderID:    42,
 		CustomerID: req.GetCustomerID(),
-		ProductId:  req.GetProductID(),
+		ProductID:  req.GetProductID(),
 		Quantity:   req.GetQuantity(),
 	}
 

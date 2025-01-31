@@ -27,7 +27,6 @@ func (s *gRPCServer) Run() error {
 
 	grpcServer := grpc.NewServer()
 
-	//...
 	orderService := service.NewOrderService()
 	handler.NewOrdersGrpcHandler(grpcServer, orderService)
 

@@ -21,12 +21,20 @@ func NewOrdersGrpcHandler(grpc *grpc.Server, orderService types.OrderService) {
 	orders.RegisterOrderServiceServer(grpc, gRPCHandler)
 }
 
+func (h *OrdersGrpcHandler) GetOrders(ctx context.Context, req *orders.GetOrderRequest) (*orders.GetOrderResponse, error) {
+	o := h.ordersService.GetOrders(ctx)
+	res := &orders.GetOrderResponse{
+		Orders: o,
+	}
+	return res, nil
+}
+
 func (h *OrdersGrpcHandler) CreateOrder(ctx context.Context,
 	req *orders.CreateOrderRequest) (*orders.CreateOrderResponse, error) {
 	order := &orders.Order{
 		OrderID:    42,
 		CustomerID: 2,
-		ProductId:  1,
+		ProductID:  1,
 		Quantity:   10,
 	}
 
