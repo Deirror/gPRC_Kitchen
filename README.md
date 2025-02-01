@@ -1,4 +1,4 @@
-# gRPCKitchen
+# gRPC-kitchen
 
 ![images](https://github.com/user-attachments/assets/b9b711f6-9b1b-416d-be3c-7ae513fbcd1a)
 
